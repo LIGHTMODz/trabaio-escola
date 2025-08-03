@@ -11,6 +11,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Cabeçalho */
@@ -156,7 +157,23 @@ footer {
   width: 100%;
 }
 
-/* Responsividade simples */
+/* Responsividade */
+@media (max-width: 768px) {
+  main {
+    padding: 0 15px;
+  }
+
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .quiz-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 @media (max-width: 600px) {
   .menu-toggle {
     display: block;
@@ -173,11 +190,15 @@ footer {
     display: flex;
   }
 
-  .quiz-link {
-    width: 80%;
-  }
-
   main {
     padding: 0 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  section h2 {
+    font-size: 1.2em;
   }
 }
