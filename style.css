@@ -202,3 +202,27 @@ footer {
     font-size: 1.2em;
   }
 }
+/* Estilo para vídeos/documentários */
+.video-container {
+  margin-bottom: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Melhor espaçamento entre vídeos e textos */
+#documentarios h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#documentarios p {
+  margin-bottom: 15px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
