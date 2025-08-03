@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz sobre Alimentos Processados</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .quiz-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quiz sobre Alimentos Processados</h1>
+  </header>
+
+  <main class="quiz-container">
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. Qual é a principal diferença entre alimentos processados e ultraprocessados?</h3>
+        <label><input type="radio" name="q1" value="a"> Os processados têm mais gordura</label>
+        <label><input type="radio" name="q1" value="b"> Os ultraprocessados contêm ingredientes artificiais e aditivos</label>
+        <label><input type="radio" name="q1" value="c"> Não existe diferença</label>
+      </div>
+
+      <div class="question">
+        <h3>2. Qual destes ingredientes é mais comum em alimentos ultraprocessados?</h3>
+        <label><input type="radio" name="q2" value="a"> Farinha integral</label>
+        <label><input type="radio" name="q2" value="b"> Conservantes e realçadores de sabor</label>
+        <label><input type="radio" name="q2" value="c"> Azeite extravirgem</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Qual desses alimentos é considerado ultraprocessado?</h3>
+        <label><input type="radio" name="q3" value="a"> Arroz integral</label>
+        <label><input type="radio" name="q3" value="b"> Maçã</label>
+        <label><input type="radio" name="q3" value="c"> Biscoito recheado</label>
+      </div>
+
+      <div class="question">
+        <h3>4. O consumo excessivo de alimentos ultraprocessados pode aumentar o risco de:</h3>
+        <label><input type="radio" name="q4" value="a"> Hipertensão, obesidade e diabetes</label>
+        <label><input type="radio" name="q4" value="b"> Resfriados e gripes</label>
+        <label><input type="radio" name="q4" value="c"> Miopia</label>
+      </div>
+
+      <div class="question">
+        <h3>5. Qual dessas atitudes ajuda a evitar o consumo de ultraprocessados?</h3>
+        <label><input type="radio" name="q5" value="a"> Comer mais em redes de fast food</label>
+        <label><input type="radio" name="q5" value="b"> Cozinhar em casa com alimentos naturais</label>
+        <label><input type="radio" name="q5" value="c"> Comprar alimentos com embalagem colorida</label>
+      </div>
+
+      <button type="submit" class="btn">Ver Resultado</button>
+    </form>
+
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Conscientização Alimentar</p>
+  </footer>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let score = 0;
+      const respostas = {
+        q1: "b",
+        q2: "b",
+        q3: "c",
+        q4: "a",
+        q5: "b"
+      };
+
+      for (let i = 1; i <= 5; i++) {
+        const resposta = document.querySelector(`input[name="q${i}"]:checked`);
+        if (resposta && resposta.value === respostas[`q${i}`]) {
+          score++;
+        }
+      }
+
+      const total = 5;
+      let mensagem = `Você acertou ${score} de ${total} perguntas.`;
+
+      if (score === total) {
+        mensagem += " Excelente! 🏆";
+      } else if (score >= 3) {
+        mensagem += " Muito bem! 👍";
+      } else {
+        mensagem += " Que tal revisar o conteúdo? 📚";
+      }
+
+      document.getElementById("result").textContent = mensagem;
+    });
+  </script>
+</body>
+</html>
