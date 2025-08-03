@@ -1,69 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Documentários</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<header>
-  <nav class="navbar">
-    <div class="logo">Alimentos Conscientes</div>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="documentarios.html" class="active">Documentários</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-    </ul>
-  </nav>
-</header>
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #388e3c;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1000;
+}
 
-<main>
-  <h1>Documentários Recomendados</h1>
-  <p>Explore documentários que abordam a indústria alimentícia e os efeitos dos alimentos processados.</p>
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
 
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5gyTL7vqwMA"
-      title="O que é um alimento ultraprocessado? - Drauzio Varella" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-    <p>
-      <a href="https://youtu.be/5gyTL7vqwMA" target="_blank" rel="noopener noreferrer">
-        O que é um alimento ultraprocessado? - Drauzio Varella
-      </a>
-    </p>
-  </div>
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4caf50;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+    border-radius: 0 0 0 8px;
+    padding: 10px 0;
+  }
 
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/iaBOzmN8_4k"
-      title="O que é um alimento processado? - It’sSeg - Acrisure" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-    <p>
-      <a href="https://youtu.be/iaBOzmN8_4k" target="_blank" rel="noopener noreferrer">
-        O que é um alimento processado? - It’sSeg - Acrisure
-      </a>
-    </p>
-  </div>
-
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-Eus0c-LHVs"
-      title="Alimentos naturais x processados - Adrielly Rodrigues" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-    <p>
-      <a href="https://youtu.be/-Eus0c-LHVs" target="_blank" rel="noopener noreferrer">
-        Alimentos naturais x processados - Adrielly Rodrigues
-      </a>
-    </p>
-  </div>
-</main>
-
-<footer>
-  &copy; 2025 Alimentos Conscientes - Projeto de conscientização
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+  nav ul.active {
+    display: flex;
+  }
+}
