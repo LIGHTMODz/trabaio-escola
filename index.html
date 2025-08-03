@@ -10,13 +10,14 @@
   <header>
     <nav class="navbar">
       <div class="logo">Alimentos Conscientes</div>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="active">Início</a></li>
         <li><a href="documentarios.html">Documentários</a></li>
         <li><a href="quiz.html">Quiz</a></li>
       </ul>
     </nav>
+
     <h1>Alimentos Processados: O Que Você Precisa Saber</h1>
     <p>Descubra o impacto dos alimentos processados na sua saúde e como fazer escolhas mais conscientes.</p>
   </header>
@@ -98,7 +99,7 @@
 </footer>
 
 <script>
-  // Script para o menu mobile
+  // Script para abrir/fechar menu hamburguer
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
